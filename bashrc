@@ -32,7 +32,6 @@ export CLICOLOR=1
 export GREP_COLOR="34;47"
 export GREP_OPTIONS="--color=auto"
 # Base16 Shell
-# See: https://github.com/chriskempson/base16-shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
 
@@ -68,8 +67,12 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 export HOMEBREW_NO_EMOJI=1
 
 ### Powerline
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+# Only source the powerline script if it is installed
+powerline_path=$(python -c 'import pkgutil; print pkgutil.get_loader("powerline").filename' 2>/dev/null)
+  if [[ "$powerline_path" != ""  ]]; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    source ${powerline_path}/bindings/bash/powerline.sh
+  fi
 
