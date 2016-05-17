@@ -80,4 +80,3 @@ if [[ "$powerline_path" != ""  ]]; then
   source ${powerline_path}/bindings/bash/powerline.sh
 fi
 
-# source ~/Desktop/bash_powerline.sh
