@@ -64,8 +64,8 @@ syntax on
 set background=dark
 set t_Co=256
 set number
-let base16colorspace=256
-colorscheme base16-default
+"colorscheme base16-default
+colorscheme base16-eighties
 
 
 "====[ Whitespace ]============================================================
@@ -86,11 +86,11 @@ set tabstop=2
 set expandtab
 " Make tab key indent by 2 spaces
 set softtabstop=2
-" Auto-indent by 2 spaces
+" Indent by 2 spaces
 set shiftwidth=2
-" Load filetype specific indentation rules if any
-filetype indent on
-
+" Automatic Indentation
+set autoindent
+set smartindent
 
 "====[ Editing ]===============================================================
 " Allow backspacing over line breaks, auto-indents, and beginning of the insert
@@ -128,7 +128,7 @@ map <C-l> <C-W>l
 "====[ Airline ]===============================================================
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='tomorrow'
+let g:airline_theme='base16_eighties'
 set noshowmode
 set laststatus=2
 " update immediately upon leaving insert mode
@@ -157,8 +157,10 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['eslint']
+
+let g:jsx_ext_required = 0
