@@ -20,7 +20,6 @@ alias www="python -m SimpleHTTPServer"
 # Git shortcuts
 alias gst="git status"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias lgb="git log --graph --pretty=oneline --abbrev-commit"
 alias ga="git add"
 alias gc="git commit"
 alias gcl="git clone"
