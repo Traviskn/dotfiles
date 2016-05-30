@@ -8,7 +8,7 @@ fi
 vim +BundleInstall +qa
 
 # Install custom bash prompt
-if [ ! -d $HOME/.bash-powerline.sh ]
+if [ ! -d $HOME/.bash-powerline.sh ]; then
   git clone https://github.com/traviskn/bash-powerline/master/bash-powerline.sh ~/.bash-powerline.sh
 fi
 
