@@ -4,6 +4,12 @@ These dotfiles are intended for use with Mac OSX.
 They are most easily managed with [rcm](https://github.com/thoughtbot/rcm).
 
 ## Pre-Requisites
+- Install the OSX Command Line Tools.
+Either download and install [Xcode](https://developer.apple.com/xcode/download/), or run this command:
+```shell
+xcode-select --install
+```
+
 - Install [Homebrew](http://brew.sh/):
 ```shell
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -12,12 +18,6 @@ They are most easily managed with [rcm](https://github.com/thoughtbot/rcm).
 - Install [git](https://git-scm.com/):
 ```shell
 brew install git
-```
-
-- Install the OSX Command Line Tools.
-Either download and install [Xcode](https://developer.apple.com/xcode/download/), or run this command:
-```shell
-xcode-select --install
 ```
 
 - Upgrade bash:
