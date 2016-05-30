@@ -32,16 +32,6 @@ chsh -s /usr/local/bin/bash
 brew install macvim --override-system-vim
 ```
 
-### Appearance Related
-Without the following dependencies your colors/themes/symbols will not appear correctly.
-
-- Install [iTerm2](https://www.iterm2.com/version3.html).
-Visit the link to download the latest version.
-
-- Install a [patched font](https://github.com/ryanoasis/nerd-fonts).
-Visit the link to see a list of all the available fonts.  I prefer [Sauce Code Pro](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf).
-
-
 - Install [nvm](https://github.com/creationix/nvm):
 ```shell
 brew install nvm
@@ -51,6 +41,21 @@ brew install nvm
 ```shell
 brew install rbenv
 ```
+
+### Appearance Related
+Without the following dependencies your colors/themes/symbols will not appear correctly.
+
+- Install a [patched font](https://github.com/ryanoasis/nerd-fonts).  These fonts included special symbols for the powerline bash prompt, the vim status bar, and the vim nerdtree file explorer.
+Visit the link to see a list of all the available fonts.  My favorite is [Sauce Code Pro](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf).
+
+- Install [iTerm2](https://www.iterm2.com/version3.html).
+Visit the link to download the latest version.  Check out [this article](http://elweb.co/making-iterm-2-work-with-normal-mac-osx-keyboard-shortcuts/) to enable some common mac keyboard shorcuts from the Terminal.app, like option-delete to delete one word at a time and option-arrow to move one word at a time.
+
+- Install the [Base16](https://chriskempson.github.io/base16/) theme for iTerm2.  You can find a list of all the themes [here](https://github.com/chriskempson/base16-iterm2).  I recommend downloading the zip file of all the themes, extracting it, and double clicking the themes you like.  That will automatically make the color preset available to you in the iTerm2 preferences.  I use the default dark and eighties dark themes most often.
+
+- Configure the iTerm2 Preferences to use the patched font and Base16 theme.  Open iTerm2 and from the top menu bar open iTerm2 > Preferences > Profiles.  Select the Text button and then the Change Font button to pick your patched font.  Next click the Colors button and select your Base16 theme from the Color Presets dropdown menu.
+
+Note: If you _really_ don't want to install iTerm2, you could probably make the default Terminal.app work with the [Base16 OSX Color Palette](https://github.com/chriskempson/base16-osx-color-palette).  If you download the zip file of the linked repository and extract it, you can import the color palette you want from the terminal preferences.  It will take a bit of work and some colors may be a little off.
 
 ### Optional Pre-Requisites
 This configuration technically won't break or throw errors without these, but it does assume you have the following installed.
