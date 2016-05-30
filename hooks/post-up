@@ -9,7 +9,7 @@ vim +BundleInstall +qa
 
 # Install custom bash prompt
 if [ ! -d $HOME/.bash-powerline.sh ]; then
-  git clone https://github.com/traviskn/bash-powerline/master/bash-powerline.sh ~/.bash-powerline.sh
+  git clone https://github.com/Traviskn/bash-powerline.git $HOME/bash-powerline/
 fi
 
 echo "Remember to use the base16 theme and get a powerline patched font"
