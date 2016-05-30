@@ -84,3 +84,18 @@ rcup
 
 The hook script will install vim plugins and my custom [bash-powerline](https://github.com/traviskn/bash-powerline) prompt for you.
 
+At this point I recommend that you restart your shell.  Your shiny new configurations should now be loaded!
+
+### One Last Step
+In order for the vim autocompletion plugin [YouCompleteMe](https://valloric.github.io/YouCompleteMe/) to work, you will need to manually compile it.
+- Install CMake
+```shell
+brew install cmake
+```
+
+- Enter the correct directory and run the install script. Omit the --gocode-completer flag if you don't have golang installed.
+```shell
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer --gocode-completer
+```
+
