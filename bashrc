@@ -60,6 +60,7 @@ export NVM_DIR="$HOME/.nvm"
 
 ### Ruby
 eval "$(rbenv init -)"
+DISABLE_SPRING=1
 
 ### Postgres
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
