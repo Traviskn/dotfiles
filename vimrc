@@ -25,9 +25,13 @@ Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'mattn/emmet-vim'
 
+Plugin 'pangloss/vim-javascript'
+
 Plugin 'elzr/vim-json'
 
 Plugin 'mxw/vim-jsx'
+
+Plugin 'mustache/vim-mustache-handlebars'
 
 Plugin 'jiangmiao/auto-pairs'
 

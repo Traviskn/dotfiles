@@ -22,7 +22,7 @@ alias gst="git status"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias ga="git add"
 alias gc="git commit"
-alias gca="gic commit --amend"
+alias gca="git commit --amend"
 alias gcl="git clone"
 alias gp="git push"
 alias gpr="git push origin HEAD:refs/for/master"
@@ -60,6 +60,7 @@ export NVM_DIR="$HOME/.nvm"
 
 ### Ruby
 eval "$(rbenv init -)"
+DISABLE_SPRING=1
 
 ### Postgres
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
