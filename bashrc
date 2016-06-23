@@ -62,7 +62,7 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(rbenv init -)"
 
 ### Postgres
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 ### Golang
 export GOPATH=~/Dev/go
