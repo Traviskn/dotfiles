@@ -15,6 +15,8 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'tpope/vim-surround'
 
+Plugin 'tpope/vim-fireplace'
+
 Plugin 'scrooloose/syntastic'
 
 Plugin 'scrooloose/nerdtree'
@@ -22,16 +24,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'ctrlpvim/ctrlp.vim'
-
-Plugin 'mattn/emmet-vim'
-
-Plugin 'pangloss/vim-javascript'
-
-Plugin 'elzr/vim-json'
-
-Plugin 'mxw/vim-jsx'
-
-Plugin 'mustache/vim-mustache-handlebars'
 
 Plugin 'jiangmiao/auto-pairs'
 
@@ -47,10 +39,28 @@ Plugin 'bronson/vim-trailing-whitespace'
 
 Plugin 'chriskempson/base16-vim'
 
+Plugin 'chriskempson/vim-tomorrow-theme'
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'ryanoasis/vim-devicons'
+
+Plugin 'mattn/emmet-vim'
+
+Plugin 'ap/vim-css-color'
+
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'elzr/vim-json'
+
+Plugin 'mxw/vim-jsx'
+
+Plugin 'mustache/vim-mustache-handlebars'
+
+Plugin 'guns/vim-clojure-static'
+
+Plugin 'kien/rainbow_parentheses.vim'
 
 call vundle#end()
 
@@ -153,6 +163,10 @@ nmap <leader>d :NERDTreeToggle<CR>
 "====[ NERDCommenter ]=========================================================
 nmap <D-/> ,c<space>
 imap <D-/> <esc>,c<space>
+
+
+"====[ NERDTree ]==============================================================
+let NERDTreeShowHidden=1
 
 
 "====[ Syntastic ]=============================================================
