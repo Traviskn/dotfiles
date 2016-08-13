@@ -69,6 +69,9 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export GOPATH=~/Dev/go
 export PATH=$PATH:$GOPATH/bin
 
+### Haskell
+export PATH=$PATH:/Library/Haskell/bin
+
 ### Android
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
