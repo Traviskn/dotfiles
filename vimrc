@@ -78,8 +78,9 @@ syntax on
 set background=dark
 set t_Co=256
 set number
-"colorscheme base16-default
 colorscheme base16-eighties
+" add jbuilder syntax highlighting
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 
 "====[ Whitespace ]============================================================
@@ -109,6 +110,8 @@ set smartindent
 "====[ Editing ]===============================================================
 " Allow backspacing over line breaks, auto-indents, and beginning of the insert
 set backspace=2
+" Delete comment character when joining commented lines
+set formatoptions+=j
 
 
 "====[ Search ]================================================================
