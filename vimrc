@@ -23,7 +23,7 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'scrooloose/nerdcommenter'
 
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'thoughtbot/pick.vim'
 
 Plugin 'jiangmiao/auto-pairs'
 
@@ -138,6 +138,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+
+"====[ Pick ]==================================================================
+map <C-p> :call PickFile()<CR>
 
 "====[ Airline ]===============================================================
 let g:airline_powerline_fonts = 1
