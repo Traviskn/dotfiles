@@ -3,7 +3,7 @@
 These dotfiles are intended for use with Mac OSX.
 They are most easily managed with [rcm](https://github.com/thoughtbot/rcm).
 
-## Pre-Requisites
+## Quickstart
 - Install the OSX Command Line Tools.
 Either download and install [Xcode](https://developer.apple.com/xcode/download/), or run this command:
 ```shell
@@ -20,26 +20,40 @@ xcode-select --install
 brew install git
 ```
 
-- Upgrade bash:
+- Install [rcm](https://github.com/thoughtbot/rcm):
 ```shell
-brew install bash
+brew install rcm
+```
+- Clone this repo into your home directory:
+```shell
+git clone https://github.com/Traviskn/dotfiles.git ~/.dotfiles
+```
+- Run the rcup command to symlink all the dotfiles and run the hook scripts:
+TODO: Have the hook scripts run the homebrew installation commands
+```shell
+rcup -x Brefile
+```
+
+- Install dependencies with homebrew
+```shell
+cd .dotfiles
+brew tap Homebrew/bundle
+brew bundle
+```
+
+### Additional Setup
+- Update your system to use the latest bash version installed by Homebrew:
+```shell
 echo /usr/local/bin/bash >> /etc/shells
 chsh -s /usr/local/bin/bash
 ```
 
-- Upgrade [Vim](http://macvim-dev.github.io/macvim/):
-```shell
-brew install macvim --override-system-vim
-```
+In order for the vim autocompletion plugin [YouCompleteMe](https://valloric.github.io/YouCompleteMe/) to work, you will need to manually compile it.
 
-- Install [nvm](https://github.com/creationix/nvm):
+- Enter the correct directory and run the install script. Omit the --gocode-completer flag if you don't need golang support.
 ```shell
-brew install nvm
-```
-
-- Install [rbenv](https://github.com/rbenv/rbenv):
-```shell
-brew install rbenv
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer --gocode-completer
 ```
 
 ### Appearance Related
@@ -57,14 +71,8 @@ Visit the link to download the latest version.  Check out [this article](http://
 
 Note: If you _really_ don't want to install iTerm2, you could probably make the default Terminal.app work with the [Base16 OSX Color Palette](https://github.com/chriskempson/base16-osx-color-palette).  If you download the zip file of the linked repository and extract it, you can import the color palette you want from the terminal preferences.  It will take a bit of work and some colors may be a little off.
 
-### Optional Pre-Requisites
+### Optional Dependencies
 This configuration technically won't break or throw errors without these, but it does assume you have the following installed.
-
-- Install [Golang](https://golang.org/).
-These configs assume your GOPATH is at ~/Dev/go.
-```shell
-brew install go
-```
 
 - Install [PostgreSQL](http://postgresapp.com/).
 Visit the link and scroll down a bit to get version 9.4
@@ -72,35 +80,6 @@ Visit the link and scroll down a bit to get version 9.4
 - Install [Android Studio](https://developer.android.com/studio/index.html).
 Visit the link and follow the download instructions.  This should give you the Android SDK and other tools.
 
-## Dotfiles Installation
-Now that you have the pre-requisites set up you are ready to install the actual dotfiles!
-- Install [rcm](https://github.com/thoughtbot/rcm):
-```shell
-brew install rcm
-```
-- Clone this repo into your home directory:
-```shell
-git clone https://github.com/Traviskn/dotfiles.git ~/.dotfiles
-```
-- Run the rcup command to symlink all the dotfiles and run the hook scripts:
-```shell
-rcup
-```
 
-The hook script will install vim plugins and my custom [bash-powerline](https://github.com/traviskn/bash-powerline) prompt for you.
 
-At this point I recommend that you restart your shell.  Your shiny new configurations should now be loaded!
-
-### One Last Step
-In order for the vim autocompletion plugin [YouCompleteMe](https://valloric.github.io/YouCompleteMe/) to work, you will need to manually compile it.
-- Install CMake
-```shell
-brew install cmake
-```
-
-- Enter the correct directory and run the install script. Omit the --gocode-completer flag if you don't have golang installed.
-```shell
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --gocode-completer
-```
 
