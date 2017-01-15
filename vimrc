@@ -142,6 +142,16 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 
+"====[ Move Lines ]============================================================
+" ALT + j/k to move lines down/up
+nmap ∆ :m .+1<CR>==
+nmap ˚ :m .-2<CR>==
+imap ∆ <Esc>:m .+1<CR>==gi
+imap ˚ <Esc>:m .-2<CR>==gi
+vmap ∆ :m '>+1<CR>gv=gv
+vmap ˚ :m '<-2<CR>gv=gv
+
+
 "====[ Pick ]==================================================================
 map <C-p> :call PickFile()<CR>
 
