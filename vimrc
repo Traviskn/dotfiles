@@ -196,5 +196,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['eslint']
-
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 let g:jsx_ext_required = 0
+
