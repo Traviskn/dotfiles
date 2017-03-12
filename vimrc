@@ -5,7 +5,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-sensible'
 
@@ -48,13 +48,13 @@ Plugin 'ryanoasis/vim-devicons'
 
 Plugin 'mattn/emmet-vim'
 
-Plugin 'ap/vim-css-color'
-
 Plugin 'pangloss/vim-javascript'
 
 Plugin 'elzr/vim-json'
 
 Plugin 'mxw/vim-jsx'
+
+Plugin 'ternjs/tern_for_vim'
 
 Plugin 'mustache/vim-mustache-handlebars'
 
@@ -78,7 +78,7 @@ syntax on
 set background=dark
 set t_Co=256
 set number
-colorscheme base16-eighties
+colorscheme tomorrow-night
 " add jbuilder syntax highlighting
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
@@ -129,10 +129,9 @@ set foldlevel=1
 
 "====[ Autocompletion ]========================================================
 set omnifunc=syntaxcomplete#Complete
-autocmd FileType python set omnifunc=python3complete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+set completeopt=longest,menuone
+let g:user_emmet_expandabbr_key='<Tab>'
+let g:ycm_add_preview_to_completeopt = 0
 
 
 "====[ Panes ]=================================================================
@@ -158,7 +157,7 @@ map <C-p> :call PickFile()<CR>
 "====[ Airline ]===============================================================
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='base16_eighties'
+let g:airline_theme='tomorrow'
 set noshowmode
 set laststatus=2
 " update immediately upon leaving insert mode
@@ -174,6 +173,7 @@ endif
 
 "====[ NERDTree ]==============================================================
 nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
 
 
 "====[ NERDCommenter ]=========================================================
