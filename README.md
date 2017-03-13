@@ -29,9 +29,8 @@ brew install rcm
 git clone https://github.com/Traviskn/dotfiles.git ~/.dotfiles
 ```
 - Run the rcup command to symlink all the dotfiles and run the hook scripts:
-TODO: Have the hook scripts run the homebrew installation commands
 ```shell
-rcup -x Brefile
+rcup -x Brewfile
 ```
 
 - Install dependencies with homebrew
@@ -42,25 +41,42 @@ brew bundle
 ```
 
 ### Additional Setup
-- Update your system to use the latest bash version installed by Homebrew:
+- Update your system to use the latest Bash version installed by Homebrew.
 ```shell
 echo /usr/local/bin/bash >> /etc/shells
 chsh -s /usr/local/bin/bash
 ```
 
-In order for the vim autocompletion plugin [YouCompleteMe](https://valloric.github.io/YouCompleteMe/) to work, you will need to manually compile it.
+- Install Node.js with NVM.
+```shell
+mkdir ~/.nvm
+nvm install --lts
+```
 
-- Enter the correct directory and run the install script. Omit the --gocode-completer flag if you don't need golang support.
+- Create a default alias so that Node.js can be invoked programatically by other applications.
+```shell
+nvm alias default lts/*
+```
+
+In order for the Vim autocompletion plugin [YouCompleteMe](https://valloric.github.io/YouCompleteMe/) to work, you will need to manually compile it.
+
+- Enter the YouCompleteMe directory and run the install script.
 ```shell
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --gocode-completer
+./install.py --clang-completer --tern-completer
+```
+
+- Enter the tern_for_vim directory and install its dependencies to enable JavaScript autocompletion.
+```shell
+cd ~/.vim/bundle/tern_for_vim
+npm install
 ```
 
 ### Appearance Related
 Without the following dependencies your colors/themes/symbols will not appear correctly.
 
 - Install a [patched font](https://github.com/ryanoasis/nerd-fonts).  These fonts included special symbols for the powerline bash prompt, the vim status bar, and the vim nerdtree file explorer.
-Visit the link to see a list of all the available fonts.  My favorite is [Sauce Code Pro](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf).
+Visit the link to see a list of all the available fonts.  I use [Sauce Code Pro](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf).
 
 - Install [iTerm2](https://www.iterm2.com/version3.html).
 Visit the link to download the latest version.  Check out [this article](http://elweb.co/making-iterm-2-work-with-normal-mac-osx-keyboard-shortcuts/) to enable some common mac keyboard shorcuts from the Terminal.app, like option-delete to delete one word at a time and option-arrow to move one word at a time.
@@ -75,11 +91,7 @@ Note: If you _really_ don't want to install iTerm2, you could probably make the 
 This configuration technically won't break or throw errors without these, but it does assume you have the following installed.
 
 - Install [PostgreSQL](http://postgresapp.com/).
-Visit the link and scroll down a bit to get version 9.4
 
 - Install [Android Studio](https://developer.android.com/studio/index.html).
-Visit the link and follow the download instructions.  This should give you the Android SDK and other tools.
-
-
-
+Follow the linked instructions to get the Android SDK and other tools.
 
