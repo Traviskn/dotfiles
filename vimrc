@@ -17,7 +17,7 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'tpope/vim-fireplace'
 
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 
 Plugin 'scrooloose/nerdtree'
 
@@ -37,6 +37,8 @@ Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'bronson/vim-trailing-whitespace'
 
+Plugin 'Yggdroot/indentLine'
+
 Plugin 'chriskempson/base16-vim'
 
 Plugin 'chriskempson/vim-tomorrow-theme'
@@ -49,8 +51,6 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'mattn/emmet-vim'
 
 Plugin 'pangloss/vim-javascript'
-
-Plugin 'elzr/vim-json'
 
 Plugin 'mxw/vim-jsx'
 
@@ -70,7 +70,7 @@ let mapleader=","
 
 
 "====[ Filetypes ]=============================================================
-filetype plugin on
+filetype plugin indent on
 
 
 "====[ Syntax highlighting and colors ]========================================
@@ -78,9 +78,9 @@ syntax on
 set background=dark
 set t_Co=256
 set number
-colorscheme tomorrow-night
-" add jbuilder syntax highlighting
-au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+colorscheme base16-default-dark
+let g:jsx_ext_required = 0
+let g:javascript_plugin_flow = 1
 
 
 "====[ Whitespace ]============================================================
@@ -92,6 +92,13 @@ set list
 " set color of tab, trailing space, and end-of-line chars to be close to the background color
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
+set conceallevel=0
+
+
+"====[ Cursor ]================================================================
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 
 "====[ Tabs ]===================================================================
@@ -184,18 +191,6 @@ imap <D-/> <esc>,c<space>
 "====[ NERDTree ]==============================================================
 let NERDTreeShowHidden=1
 
-
-"====[ Syntastic ]=============================================================
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{ALEGetStatusLine()}
 set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
-let g:jsx_ext_required = 0
-
