@@ -24,6 +24,9 @@ alias ll="ls -lahG"
 # Run a simple web server
 alias www="python -m SimpleHTTPServer"
 
+# Clear the console output
+alias cl="clear"
+
 # Git shortcuts
 alias gst="git status"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
@@ -96,3 +99,6 @@ export HOMEBREW_NO_EMOJI=1
 ### Powerline Prompt
 export USE_POWERLINE_FONTS=1
 [ -f ~/bash-powerline/bash-powerline.sh ] && . ~/bash-powerline/bash-powerline.sh
+
+### Local config specific to this machine
+[ -f ~/.bashrc.local ] && ~/.bashrc.local
