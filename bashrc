@@ -3,6 +3,10 @@
 # sudo -s # <- may not be required
 # echo /usr/local/bin/bash >> /etc/shells
 # chsh -s /usr/local/bin/bash
+export SHELL="/usr/local/bin/bash"
+
+### Editor
+export EDITOR="vim"
 
 ### Custom commands
 # Show hidden dot files, directories, etc
@@ -16,12 +20,6 @@ alias ll="ls -lahG"
 
 # Run a simple web server
 alias www="python -m SimpleHTTPServer"
-
-### Editor
-export EDITOR="vim"
-
-### Tmux
-source $(brew --prefix)/etc/bash_completion.d/tmuxinator
 
 # Git shortcuts
 alias gst="git status"
@@ -69,7 +67,7 @@ eval "$(rbenv init -)"
 DISABLE_SPRING=1
 
 ### Postgres
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+# export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 ### Golang
 export GOPATH=~/Dev/go
