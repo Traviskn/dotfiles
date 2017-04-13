@@ -42,6 +42,13 @@ alias grb="git rebase"
 alias gcp="git cherry-pick"
 alias undo-commit="git reset --soft HEAD~"
 
+# React Native shortcuts
+alias ra="react-native run-android"
+# launch the dev menu on the connected device
+alias rr="adb -s 0a1e79d4df668581 shell input keyevent 82 "
+alias rdb="adb reverse tcp:8081 tcp:8081"
+alias ri="react-native run-ios"
+
 ### Color customizations
 export CLICOLOR=1
 export GREP_COLOR="34;47"
@@ -88,4 +95,4 @@ export HOMEBREW_NO_EMOJI=1
 
 ### Powerline Prompt
 export USE_POWERLINE_FONTS=1
-source ~/bash-powerline/bash-powerline.sh
+[ -f ~/bash-powerline/bash-powerline.sh ] && . ~/bash-powerline/bash-powerline.sh
