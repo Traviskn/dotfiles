@@ -17,6 +17,12 @@ alias ll="ls -lahG"
 # Run a simple web server
 alias www="python -m SimpleHTTPServer"
 
+### Editor
+export EDITOR="vim"
+
+### Tmux
+source $(brew --prefix)/etc/bash_completion.d/tmuxinator
+
 # Git shortcuts
 alias gst="git status"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
