@@ -8,6 +8,9 @@ export SHELL="/usr/local/bin/bash"
 ### Editor
 export EDITOR="vim"
 
+### Autocompletion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 ### Custom commands
 # Show hidden dot files, directories, etc
 alias show="defaults write com.apple.finder AppleShowAllFiles YES"
