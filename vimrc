@@ -62,6 +62,10 @@ Plugin 'guns/vim-clojure-static'
 
 Plugin 'kien/rainbow_parentheses.vim'
 
+Plugin 'tmux-plugins/vim-tmux'
+
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+
 call vundle#end()
 
 
@@ -78,7 +82,12 @@ syntax on
 set background=dark
 set t_Co=256
 set number
-colorscheme base16-default-dark
+colorscheme base16-eighties
+
+" disallow hiding of characters
+set conceallevel=0
+
+" JavaScript specific syntax rules
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
 
@@ -92,7 +101,6 @@ set list
 " set color of tab, trailing space, and end-of-line chars to be close to the background color
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
-set conceallevel=0
 
 
 "====[ Cursor ]================================================================
@@ -164,7 +172,7 @@ map <C-p> :call PickFile()<CR>
 "====[ Airline ]===============================================================
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='tomorrow'
+let g:airline_theme='base16_eighties'
 set noshowmode
 set laststatus=2
 " update immediately upon leaving insert mode
