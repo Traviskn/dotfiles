@@ -1,0 +1,10 @@
+# ~/.tmuxinator/dev.yml
+
+name: dev
+
+windows:
+  - editor:
+      layout: 81cf,84x39,0,0[84x29,0,0,0,84x9,0,30,1]
+      panes:
+        - vim
+        - #empty
