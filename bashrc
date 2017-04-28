@@ -61,7 +61,7 @@ export GREP_OPTIONS="--color=auto"
 export HISTSIZE=10000
 export HISTIMEFORMAT='%b %d %I:%M %p'
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="history:cd:pwd:exit:df:ls:ls -la:ll"
+export HISTIGNORE="history:cd:pwd:exit:df:ls:ls -la:ll:cl"
 
 ### Python
 export PATH=~/Library/Python/2.7/bin:$PATH

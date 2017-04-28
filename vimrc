@@ -66,6 +66,10 @@ Plugin 'tmux-plugins/vim-tmux'
 
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 
+Plugin 'christoomey/vim-tmux-navigator'
+
+Plugin 'benmills/vimux'
+
 call vundle#end()
 
 
@@ -104,6 +108,7 @@ highlight SpecialKey guifg=#4a4a59
 
 
 "====[ Cursor ]================================================================
+" box in normal/visual, vertical line in insert, underline in replace
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -168,6 +173,7 @@ vmap ˚ :m '<-2<CR>gv=gv
 
 "====[ Pick ]==================================================================
 map <C-p> :call PickFile()<CR>
+nnoremap <Leader>b :call PickBuffer()<CR>
 
 "====[ Airline ]===============================================================
 let g:airline_powerline_fonts = 1
@@ -202,3 +208,6 @@ let NERDTreeShowHidden=1
 set statusline+=%#warningmsg#
 set statusline+=%{ALEGetStatusLine()}
 set statusline+=%*
+
+"====[ Vimux ]=================================================================
+map <Leader>vp :VimuxPromptCommand<CR>
