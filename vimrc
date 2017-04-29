@@ -23,7 +23,9 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'scrooloose/nerdcommenter'
 
-Plugin 'thoughtbot/pick.vim'
+Plugin 'junegunn/fzf'
+
+Plugin 'junegunn/fzf.vim'
 
 Plugin 'jiangmiao/auto-pairs'
 
@@ -127,6 +129,7 @@ set shiftwidth=2
 set autoindent
 set smartindent
 
+
 "====[ Editing ]===============================================================
 " Allow backspacing over line breaks, auto-indents, and beginning of the insert
 set backspace=2
@@ -135,14 +138,16 @@ set formatoptions+=j
 
 
 "====[ Search ]================================================================
-" Start searching before pressing enter
 set incsearch
+set grepprg=rg\ --vimgrep
+map <C-p> :Files<CR>
+command! -bang -nargs=* Find call fzf#vim#grep('rg --line-number --fixed-strings --ignore-case --follow --color "always" '.shellescape(<q-args>), <bang>0)
+map <leader>f :Find<CR>
 
 
 "====[ Folding ]===============================================================
 set foldmethod=indent
 set foldnestmax=10
-" don't fold by default
 set nofoldenable
 set foldlevel=1
 
@@ -171,10 +176,6 @@ vmap ∆ :m '>+1<CR>gv=gv
 vmap ˚ :m '<-2<CR>gv=gv
 
 
-"====[ Pick ]==================================================================
-map <C-p> :call PickFile()<CR>
-nnoremap <Leader>b :call PickBuffer()<CR>
-
 "====[ Airline ]===============================================================
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -193,21 +194,16 @@ endif
 
 
 "====[ NERDTree ]==============================================================
-nmap <leader>d :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
-
-
-"====[ NERDCommenter ]=========================================================
-nmap <D-/> ,c<space>
-imap <D-/> <esc>,c<space>
-
-
-"====[ NERDTree ]==============================================================
 let NERDTreeShowHidden=1
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>D :NERDTreeFind<CR>
 
+
+"====[ Linter ]================================================================
 set statusline+=%#warningmsg#
 set statusline+=%{ALEGetStatusLine()}
 set statusline+=%*
+
 
 "====[ Vimux ]=================================================================
 map <Leader>vp :VimuxPromptCommand<CR>
