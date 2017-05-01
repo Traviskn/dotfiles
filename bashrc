@@ -109,4 +109,4 @@ export USE_POWERLINE_FONTS=1
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 ### Local config specific to this machine
-[ -f ~/.bashrc.local ] && ~/.bashrc.local
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local
