@@ -54,11 +54,11 @@ Plugin 'mattn/emmet-vim'
 
 Plugin 'pangloss/vim-javascript'
 
+Plugin 'elzr/vim-json'
+
 Plugin 'mxw/vim-jsx'
 
 Plugin 'ternjs/tern_for_vim'
-
-Plugin 'mustache/vim-mustache-handlebars'
 
 Plugin 'guns/vim-clojure-static'
 
@@ -90,10 +90,8 @@ set t_Co=256
 set number
 colorscheme base16-eighties
 
-" disallow hiding of characters
-set conceallevel=0
-
 " JavaScript specific syntax rules
+let g:vim_json_syntax_conceal = 0
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
 
