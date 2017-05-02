@@ -25,7 +25,7 @@ alias ll="ls -lahG"
 alias www="python -m SimpleHTTPServer"
 
 # Clear the console output
-alias cl="clear"
+alias c="clear"
 
 # Git shortcuts
 alias gst="git status"
