@@ -88,7 +88,7 @@ syntax on
 set background=dark
 set t_Co=256
 set number
-colorscheme base16-eighties
+colorscheme base16-default-dark
 
 " JavaScript specific syntax rules
 let g:vim_json_syntax_conceal = 0
@@ -176,7 +176,7 @@ vmap ˚ :m '<-2<CR>gv=gv
 "====[ Airline ]===============================================================
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='base16_eighties'
+let g:airline_theme='base16_colors'
 set noshowmode
 set laststatus=2
 " update immediately upon leaving insert mode
