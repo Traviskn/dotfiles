@@ -176,7 +176,7 @@ vmap ˚ :m '<-2<CR>gv=gv
 "====[ Airline ]===============================================================
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='base16_colors'
+let g:airline_theme='base16'
 set noshowmode
 set laststatus=2
 " update immediately upon leaving insert mode
