@@ -136,10 +136,9 @@ set formatoptions+=j
 
 "====[ Search ]================================================================
 set incsearch
-set grepprg=rg\ --vimgrep
+set grepprg=ag\ --vimgrep
 map <C-p> :Files<CR>
-command! -bang -nargs=* Find call fzf#vim#grep('rg --line-number --fixed-strings --ignore-case --follow --color "always" '.shellescape(<q-args>), <bang>0)
-map <leader>f :Find<CR>
+map <leader>f :Ag<CR>
 
 
 "====[ Folding ]===============================================================

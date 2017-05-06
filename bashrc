@@ -101,12 +101,8 @@ export USE_POWERLINE_FONTS=1
 [ -f ~/bash-powerline/bash-powerline.sh ] && . ~/bash-powerline/bash-powerline.sh
 
 ### Fuzzy Finder
-# --files: List files that would be searched but do not search
-# --no-ignore: Do not respect .gitignore, etc...
-# --hidden: Search hidden files and folders
-# --follow: Follow symlinks
-# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export FZF_DEFAULT_OPTS='--reverse --border'
 
 ### Local config specific to this machine
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
