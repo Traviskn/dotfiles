@@ -37,6 +37,8 @@ Plugin 'mbbill/undotree'
 
 Plugin 'terryma/vim-multiple-cursors'
 
+Plugin 'AndrewRadev/splitjoin.vim'
+
 Plugin 'bronson/vim-trailing-whitespace'
 
 Plugin 'Yggdroot/indentLine'
@@ -52,17 +54,9 @@ Plugin 'ryanoasis/vim-devicons'
 
 Plugin 'mattn/emmet-vim'
 
-Plugin 'pangloss/vim-javascript'
-
-Plugin 'elzr/vim-json'
-
-Plugin 'mxw/vim-jsx'
+Plugin 'sheerun/vim-polyglot'
 
 Plugin 'ternjs/tern_for_vim'
-
-Plugin 'guns/vim-clojure-static'
-
-Plugin 'kien/rainbow_parentheses.vim'
 
 Plugin 'tmux-plugins/vim-tmux'
 
@@ -79,16 +73,14 @@ call vundle#end()
 let mapleader=","
 
 
-"====[ Filetypes ]=============================================================
-filetype plugin indent on
-
-
 "====[ Syntax highlighting and colors ]========================================
+colorscheme base16-default-dark
+filetype plugin indent on
 syntax on
 set background=dark
 set t_Co=256
 set number
-colorscheme base16-default-dark
+set cursorline
 
 " JavaScript specific syntax rules
 let g:vim_json_syntax_conceal = 0
@@ -97,14 +89,14 @@ let g:javascript_plugin_flow = 1
 
 
 "====[ Whitespace ]============================================================
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
 " make tabs, trailing spaces, and end of lines visible characters
 set listchars=tab:▸\ ,trail:.,eol:¬
 set list
 " set color of tab, trailing space, and end-of-line chars to be close to the background color
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
+" toggle whitespace character visibility
+nmap <leader>l :set list!<CR>
 
 
 "====[ Cursor ]================================================================
@@ -139,7 +131,7 @@ set incsearch
 set grepprg=ag\ --vimgrep
 map <C-p> :Files<CR>
 map <leader>f :Ag<CR>
-
+set wildignore+=*/node_modules/*,*.swp
 
 "====[ Folding ]===============================================================
 set foldmethod=indent
@@ -155,11 +147,23 @@ let g:user_emmet_expandabbr_key='<Tab>'
 let g:ycm_add_preview_to_completeopt = 0
 
 
+"====[ Saving ]================================================================
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>x :x<CR>
+nnoremap <Leader>q :q<CR>
+
+
 "====[ Panes ]=================================================================
+" splitting
+nnoremap vv  :vsplit<CR>
+nnoremap ss  :split<CR>
+" navigating
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+" Automatically resize splits when window is resized
+au VimResized * exe "normal! \<c-w>="
 
 
 "====[ Move Lines ]============================================================
@@ -170,7 +174,14 @@ imap ∆ <Esc>:m .+1<CR>==gi
 imap ˚ <Esc>:m .-2<CR>==gi
 vmap ∆ :m '>+1<CR>gv=gv
 vmap ˚ :m '<-2<CR>gv=gv
+" Automatically reselect block on indent/outdent
+vnoremap < <gv
+vnoremap > >gv
 
+
+"====[ Clipboard ]=============================================================
+" use the system clipboard
+set clipboard=unnamed
 
 "====[ Airline ]===============================================================
 let g:airline_powerline_fonts = 1

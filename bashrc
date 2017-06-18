@@ -76,18 +76,18 @@ export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
 
 ### Ruby
-eval "$(rbenv init -)"
-DISABLE_SPRING=1
+# eval "$(rbenv init -)"
+# DISABLE_SPRING=1
 
 ### Postgres
 # export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 ### Golang
-export GOPATH=~/Dev/go
-export PATH=$PATH:$GOPATH/bin
+# export GOPATH=~/Dev/go
+# export PATH=$PATH:$GOPATH/bin
 
 ### Haskell
-export PATH=$PATH:/Library/Haskell/bin
+# export PATH=$PATH:/Library/Haskell/bin
 
 ### Android
 export ANDROID_HOME=~/Library/Android/sdk
