@@ -87,6 +87,9 @@ let g:vim_json_syntax_conceal = 0
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
 
+" Markdown specific syntax rules
+let g:vim_markdown_conceal = 0
+
 
 "====[ Whitespace ]============================================================
 " make tabs, trailing spaces, and end of lines visible characters
