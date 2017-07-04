@@ -85,7 +85,7 @@ Visit the link to download the latest version.  Check out [this article](http://
 
 - Configure the iTerm2 Preferences to use the patched font and Base16 theme.  Open iTerm2 and from the top menu bar open iTerm2 > Preferences > Profiles.  Select the Text button and then the Change Font button to pick your patched font.  Next click the Colors button and select your Base16 theme from the Color Presets dropdown menu.
 
-Note: If you _really_ don't want to install iTerm2, you could probably make the default Terminal.app work with the [Base16 OSX Color Palette](https://github.com/chriskempson/base16-osx-color-palette).  If you download the zip file of the linked repository and extract it, you can import the color palette you want from the terminal preferences.  It will take a bit of work and some colors may be a little off.
+Note: If you don't want to install iTerm2, you can make the default Terminal.app work with the base 16 color scheme by using the Base_16.terminal configuration included in this repo.  Simply double click it to install the config to your terminal.app, and you can use it from your preferences.
 
 ### Optional Dependencies
 This configuration technically won't break or throw errors without these, but it does assume you have the following installed.
