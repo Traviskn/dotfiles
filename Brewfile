@@ -28,9 +28,9 @@ brew 'openssl'
 brew 'sqlite'
 brew 'python'
 brew 'python3'
-brew 'macvim', args: ['with-override-system-vim']
-brew 'node'
+brew 'vim', args: ['with-override-system-vi']
 brew 'nvm'
+brew 'elixir'
 brew 'pcre'
 brew 'pick'
 brew 'pkg-config'
