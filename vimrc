@@ -184,9 +184,6 @@ imap ∆ <Esc>:m .+1<CR>==gi
 imap ˚ <Esc>:m .-2<CR>==gi
 vmap ∆ :m '>+1<CR>gv=gv
 vmap ˚ :m '<-2<CR>gv=gv
-" Automatically reselect block on indent/outdent
-vnoremap < <gv
-vnoremap > >gv
 
 
 "====[ Clipboard ]=============================================================
