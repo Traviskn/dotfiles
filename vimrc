@@ -78,6 +78,8 @@ let mapleader=","
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
 
+" Update when file is changed from outside
+set autoread
 
 "====[ Syntax highlighting and colors ]========================================
 colorscheme base16-default-dark
