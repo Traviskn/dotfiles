@@ -56,6 +56,8 @@ Plugin 'mattn/emmet-vim'
 
 Plugin 'sheerun/vim-polyglot'
 
+Plugin 'prettier/vim-prettier'
+
 Plugin 'ternjs/tern_for_vim'
 
 Plugin 'tmux-plugins/vim-tmux'
@@ -71,6 +73,10 @@ call vundle#end()
 
 "====[ Leader ]================================================================
 let mapleader=","
+
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
 
 
 "====[ Syntax highlighting and colors ]========================================
@@ -100,7 +106,8 @@ highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 " toggle whitespace character visibility
 nmap <leader>l :set list!<CR>
-
+" show the 80th column to keep lines of code short
+set cc=80
 
 "====[ Cursor ]================================================================
 " box in normal/visual, vertical line in insert, underline in replace
@@ -138,10 +145,12 @@ set formatoptions+=j
 
 "====[ Search ]================================================================
 set incsearch
+set ignorecase
 set grepprg=ag\ --vimgrep
 map <C-p> :Files<CR>
 map <leader>f :Ag<CR>
 set wildignore+=*/node_modules/*,*.swp
+
 
 "====[ Folding ]===============================================================
 set foldmethod=indent
@@ -189,6 +198,7 @@ vmap ˚ :m '<-2<CR>gv=gv
 "====[ Clipboard ]=============================================================
 " use the system clipboard
 set clipboard=unnamed
+
 
 "====[ Airline ]===============================================================
 let g:airline_powerline_fonts = 1
